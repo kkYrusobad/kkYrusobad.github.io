@@ -1,0 +1,115 @@
+/* Input field for city name */
+input[id="city"],
+input[id="key"] {
+	color: var(--weather-icon);
+	font-family: var(--global-font);
+	font-weight: bold;
+	font-style: normal;
+	font-size: 18px;
+	text-align: center;
+	background: transparent;
+	border: none;
+	transition: .3s;
+	border-radius: 6px;
+	padding: 5px;
+}
+
+input[id="key"]:hover,
+input[id="key"]:focus,
+input[id="city"]:hover,
+input[id="city"]:focus {
+	color: var(--weather-bg);
+	background: var(--weather-icon);
+	transform: translateY(-3px);
+	transition: .3s;
+	box-shadow: 0 3px 10px rgba(2, 2, 2, 0.45);
+	outline: none;
+}
+input[id="key"]::placeholder,
+input[id="city"]::placeholder {
+	color: var(--weather-description);
+	transition: .3s;
+}
+
+input[id="key"]:focus::placeholder,
+input[id="key"]:hover::placeholder, 
+input[id="city"]:focus::placeholder,
+input[id="city"]:hover::placeholder { 
+	color: var(--weather-bg);
+	transition: .3s;
+}
+
+/* Weather card */
+.weather-card {
+	position: absolute;
+	font-weight: bold;
+	font-style: normal;
+	font-size: 18px;
+	color: var(--weather-fg);
+	text-decoration: none;
+	opacity: 0;
+	transition: .5s;
+	z-index: -1;
+}
+
+/* Weather information */
+.weather-card__info {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+#icon {
+	font-size: 60px;
+	color: var(--weather-icon);
+}
+
+#description {
+	color: var(--weather-description);
+	max-width: 80%;
+	overflow-wrap: break-word;
+	white-space: normal;
+	text-align: center;
+	font-weight: bold;
+}
+
+#temp, #remember {
+	font-weight: bold;
+	color: var(--weather-temp); 
+	transition: .3s;
+	padding: 5px;
+	margin-bottom: -5px;
+}
+
+#temp:hover {
+	cursor: pointer;
+	color: var(--weather-icon);
+	transition: .3s;
+}
+
+#temp:empty {
+	padding: 0px;
+	margin: 0px;
+}
+
+/* Weather checkbox */
+.chb_weather + label::before,
+.chb_weather + label:hover::before,
+.chb_weather:checked + label::before,
+.chb_weather:checked + label:hover::before {
+	font-family: var(--font-awesome);
+	font-weight: 900;
+	font-size: 18px;
+	content: "\f0c2";
+	cursor: pointer;
+	transition: .3s;
+}
+
+.chb_weather + label::before {color: #BDBDBD;}
+
+.chb_weather + label:hover::before {color: #9E9E9E;}
+
+.chb_weather:checked + label::before {color: #7986CB;}
+
+.chb_weather:checked + label:hover::before {color: #5C6BC0;}

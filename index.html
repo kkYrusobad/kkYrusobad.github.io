@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="icon" href="fav.png">
+	<title>Tea Green</title>
+</head>
+
+<body>
+	<div class="tilt" data-tilt data-tilt-max="5" data-tilt-speed="3000" data-tilt-perspective="500"
+		data-tilt-reverse="true">
+		<div class="card">
+			<div class="buttons">
+				<input type="checkbox" class="chb_theme" id="switch_theme">
+				<label class="btn_theme" for="switch_theme"></label>
+				<input type="checkbox" class="chb_weather" id="switch_weather">
+				<label class="btn_weather" for="switch_weather"></label>
+				<input type="checkbox" class="chb_todo" id="switch_todo">
+				<label class="btn_todo" for="switch_todo"></label>
+			</div>
+			<div class="weather-card">
+				<div class="weather-card__info">
+					<i id="icon"></i>
+					<p id="description"></p>
+					<p id="temp"></p>
+				</div>
+				<input id="city" type="text" placeholder="enter the name of the city" autocomplete="off">
+				<input id="key" type="text" placeholder="add your api key" autocomplete="off">
+			</div>
+			<div class="todo-card">
+				<form class="todo-card__form">
+					<input id="todo" placeholder="what needs to be done?" class="todo-card__form-input" type="text"
+						autocomplete="off">
+				</form>
+				<ul class="todo-card__list"></ul>
+			</div>
+			<div class="content">
+				<div class="links">
+					<a href="http://notlove/admin/index.php" target="_blank">
+						<!-- <img src="assets/icons/pi_hole_icon_138287.ico"> -->
+						<i class="fab fa-raspberry-pi"></i>
+					</a>
+					<a href="http://notlove:9000/#!/1/docker/dashboard" target="_blank">
+						<i class="fab fa-docker"></i>
+					</a>
+					<a href="http://notlove:9092/files/" target="_blank">
+						<i class="fas fa-folder"></i>
+					</a>
+					<a href="https://notlove:10000/sysinfo.cgi?xnavigation=1" target="_blank">
+						<i class="fas fa-user-shield"></i>
+					</a>
+					<a href="http://notlove:9094/" target="_blank">
+						<i class="fas fa-share-alt"></i>
+					</a>
+					<a href="https://unitarity.onrender.com/en/" target="_blank">
+						<i class="fas fa-newspaper"></i>
+					</a>
+					<a href="https://github.com/kkYrusobad" target="_blank">
+						<i class="fab fa-github"></i>
+					</a>
+					<a href="https://itsmeh.com/" target="_blank">
+						<i class="fas fa-heart"></i>
+					</a>
+				</div>
+				<div class="search">
+					<input id="searchbox" placeholder="-d | -y | -w | -r | -h" type="text" autocomplete="off">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<script src="js/theme.js"></script>
+	<script src="js/weather.js"></script>
+	<script src="js/todo.js"></script>
+	<script src="js/search.js"></script>
+	<script src="js/vanilla-tilt.js"></script>
+
+</body>
+
+</html>

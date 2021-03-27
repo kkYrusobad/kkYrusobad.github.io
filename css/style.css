@@ -1,0 +1,237 @@
+/* Fonts */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600&display=swap|Noto+Sans|Open+Sans:wght@300;400;700|Roboto:400&display=swap&subset=cyrillic');
+
+/* Weather icon styles */
+@import url('../css/weather-icons-wind.css');
+@import url('../css/weather-icons.css');
+
+/* Weather and To-Do List styles */
+@import url('../css/todolist-style.css');
+@import url('../css/weather-style.css');
+
+/* Light theme */
+:root {
+	--roboto: 'Roboto', sans-serif;
+	--noto-sans: 'Noto Sans', sans-serif;
+	--open-sans: 'Open Sans', sans-serif;
+	--roboto-slab: 'Roboto Slab', serif;
+	--font-awesome: 'Font Awesome 5 Free';
+
+	--global-font: var(--open-sans);
+
+	--background: #fff;
+	--foreground: #7a8c70;
+	--header: #5C6657;
+	--card-bg: #c1ecac;
+
+	--weather-fg: #C5CAE9;
+	--weather-bg: #3c4b96;
+	--weather-icon: #E8EAF6;
+	--weather-temp: #C5CAE9;
+	--weather-description: #9FA8DA;
+
+	--todo-bg: #f2e69d;
+	--todo-fg: #807a53;
+	--todo-hover: #4d4932;
+	--todo-input: #b3aa74;
+	--todo-done: #ccc085;
+
+	--search: #a6bf99;
+
+	--card-shadow-color: rgba(0, 0, 0, 0.35);
+}
+
+/* Dark theme */
+[theme="dark"] {
+	--background: #282828;
+	--foreground: #a89984;
+	--header: #928374;
+	--card-bg: #1d2021;
+
+	--weather-fg: #BDBDBD;
+	--weather-bg: var(--card-bg);
+	--weather-icon: #E0E0E0;
+	--weather-temp: var(--weather-fg);
+	--weather-description: #9E9E9E;
+
+	--todo-bg: var(--card-bg);
+	--todo-fg: #a6a6a6;
+	--todo-hover: #737373;
+	--todo-input: #737373;
+	--todo-done: #474747;
+
+	--search: #737373;
+
+	--card-shadow-color: rgba(0, 0, 0, 0.45);
+}
+
+* {
+	box-sizing: content-box;
+	margin: 0;
+	font-family: var(--global-font);
+}
+
+body {
+	background: var(--background);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	overflow: hidden;
+	transition: .5s;
+}
+
+input[type="checkbox"] {display: none;}
+
+.tilt {position: absolute;}
+
+.card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: var(--card-bg);
+	width: 340px;
+	height: 240px;
+	border-radius: 8px;
+	box-shadow: 0px 2px 25px var(--card-shadow-color);
+	transition: background-color .7s, box-shadow .7s;
+}
+
+.weather-card-color {
+	background: var(--weather-bg);
+	box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.45);
+	transition: background-color 1s, box-shadow 1s;
+}
+
+.todo-card-color {
+	background: var(--todo-bg);
+	box-shadow: 0px 2px 20px var(--card-shadow-color);
+	transition: background-color 1s, box-shadow 1s;
+}
+
+.hide {
+	position: absolute;
+	opacity: 0;
+	z-index: -1;
+}
+
+.content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	transition: .5s;
+}
+
+.links {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	margin: 25px 25px 0px 25px;
+	opacity: 1;
+	transition: 1s;
+	z-index: 1;
+}
+
+a {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: var(--foreground);
+	outline: none;
+	font-size: 30px;
+	width: 30px;
+	height: 30px;
+	padding: 15px;
+	margin: 5px;
+	border-radius: 8px;
+	transition: .2s;
+}
+
+a:hover,
+input[id="searchbox"]:hover,
+input[id="searchbox"]:focus {
+	color: var(--card-bg);
+	background: var(--header);
+	transform: translateY(-3px);
+	transition: .2s;
+	box-shadow: 0 3px 10px rgba(2, 2, 2, 0.45);
+	outline: none;
+}
+
+.search {
+	margin: 0px 0px 25px 0px;
+	border: none;
+	opacity: 1;
+	transition: 1s;
+	z-index: 1;
+}
+
+input[id="searchbox"] {
+	font-family: var(--global-font);
+	font-size: 18px;
+	color: var(--header);
+	text-align: center;
+	background: transparent;
+	border: none;
+
+	padding: 5px;
+	transition: .2s;
+	border-radius: 8px;
+}
+
+input[id="searchbox"]::placeholder {
+	color: var(--foreground);
+	transition: .2s;
+}
+
+input[id="searchbox"]:focus::placeholder,
+input[id="searchbox"]:hover::placeholder {
+	color: var(--card-bg);
+	transition: .2s;
+}
+
+/* Theme checkbox */
+.btn_theme {
+	transform: rotate(-25deg);
+}
+
+.chb_theme + label::before,
+.chb_theme + label:hover::before,
+.chb_theme:checked + label::before,
+.chb_theme:checked + label:hover::before {
+	font-family: var(--font-awesome);
+	font-weight: 900;
+	font-size: 20px;
+	content: "\f186";
+	cursor: pointer;
+	transition: .2s;
+}
+
+.chb_theme + label::before {color: #BDBDBD;}
+
+.chb_theme + label:hover::before {color: #9E9E9E;}
+
+.chb_theme:checked + label::before {color: #FFD740;}
+
+.chb_theme:checked + label:hover::before {color: #bfa132;}
+
+.buttons {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	left: -35px;
+}
+
+.btn_theme,
+.btn_weather,
+.btn_todo {
+	margin: 5px 0px;
+}
