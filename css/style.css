@@ -40,7 +40,11 @@
 	--search: #a6bf99;
 
 	--card-shadow-color: rgba(0, 0, 0, 0.35);
+	bike: "%3Csvg height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='m5 20.5a3.5 3.5 0 0 1 -3.5-3.5 3.5 3.5 0 0 1 3.5-3.5 3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1 -3.5 3.5m0-8.5a5 5 0 0 0 -5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0 -5-5m9.8-2h4.2v-1.8h-3.2l-1.94-3.27c-.29-.5-.86-.83-1.46-.83-.47 0-.9.19-1.2.5l-3.7 3.69c-.31.31-.5.71-.5 1.21 0 .63.33 1.16.85 1.47l3.35 2.03v5h1.8v-6.5l-2.25-1.65 2.32-2.35m5.93 13a3.5 3.5 0 0 1 -3.5-3.5 3.5 3.5 0 0 1 3.5-3.5 3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1 -3.5 3.5m0-8.5a5 5 0 0 0 -5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0 -5-5m-3-7.2c1 0 1.8-.8 1.8-1.8s-.8-1.8-1.8-1.8-1.8.8-1.8 1.8.8 1.8 1.8 1.8z'/%3E%3C/svg%3E";
+	bikeHover: "%3Csvg height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='red' d='m5 20.5a3.5 3.5 0 0 1 -3.5-3.5 3.5 3.5 0 0 1 3.5-3.5 3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1 -3.5 3.5m0-8.5a5 5 0 0 0 -5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0 -5-5m9.8-2h4.2v-1.8h-3.2l-1.94-3.27c-.29-.5-.86-.83-1.46-.83-.47 0-.9.19-1.2.5l-3.7 3.69c-.31.31-.5.71-.5 1.21 0 .63.33 1.16.85 1.47l3.35 2.03v5h1.8v-6.5l-2.25-1.65 2.32-2.35m5.93 13a3.5 3.5 0 0 1 -3.5-3.5 3.5 3.5 0 0 1 3.5-3.5 3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1 -3.5 3.5m0-8.5a5 5 0 0 0 -5 5 5 5 0 0 0 5 5 5 5 0 0 0 5-5 5 5 0 0 0 -5-5m-3-7.2c1 0 1.8-.8 1.8-1.8s-.8-1.8-1.8-1.8-1.8.8-1.8 1.8.8 1.8 1.8 1.8z'/%3E%3C/svg%3E";
+
 }
+
 
 /* Dark theme */
 [theme="dark"] {
@@ -157,13 +161,86 @@ a {
 a:hover,
 input[id="searchbox"]:hover,
 input[id="searchbox"]:focus {
-	color: var(--card-bg);
-	background: var(--header);
+	color: #1d2021;
+	background: #928374;
 	transform: translateY(-3px);
 	transition: .2s;
 	box-shadow: 0 3px 10px rgba(2, 2, 2, 0.45);
 	outline: none;
 }
+
+/* custom icon sets */
+.icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	color: var(--foreground);
+	outline: none;
+	font-size: 30px;
+	width: 30px;
+	height: 30px;
+	padding: 15px;
+	margin: 5px;
+	border-radius: 8px;
+	transition: .2s;
+}
+
+/* hackthebox block */
+/*.icon-htb {
+	background: url('https://api.iconify.design/simple-icons:hackthebox.svg?color=%23a89984') no-repeat center center / contain;
+}
+.icon-htb:hover {
+	background: url('https://api.iconify.design/simple-icons:hackthebox.svg?color=%231d2021') no-repeat center center / contain;
+}
+.icon-htb:focus {
+	background: url('https://api.iconify.design/simple-icons:hackthebox.svg?color=%231d2021') no-repeat center center / contain;
+}*/
+
+/* webmin block */
+/*.icon-webmin {
+	background: url('https://api.iconify.design/simple-icons:webmin.svg?color=%23a89984') no-repeat center center / contain;
+}
+.icon-webmin:hover {
+	background: url('https://api.iconify.design/simple-icons:webmin.svg?color=%231d2021') no-repeat center center / contain;
+}
+.icon-webmin:focus {
+	background: url('https://api.iconify.design/simple-icons:webmin.svg?color=%231d2021') no-repeat center center / contain;
+}*/
+
+/* pi-hole block */
+/*.icon-pihole {
+	background: url('https://api.iconify.design/simple-icons:pi-hole.svg?color=%23a89984') no-repeat center center / contain;
+}
+.icon-pihole:hover {
+	background: url('https://api.iconify.design/simple-icons:pi-hole.svg?color=%231d2021') no-repeat center center / contain;
+}
+.icon-pihole:focus {
+	background: url('https://api.iconify.design/simple-icons:pi-hole.svg?color=%231d2021') no-repeat center center / contain;
+}*/
+
+/* netlify block */
+/*.icon-netlify {
+	background: url('https://api.iconify.design/cib:netlify.svg?color=%23a89984') no-repeat center center / contain;
+}
+.icon-netlify:hover {
+	background: url('https://api.iconify.design/cib:netlify.svg?color=%231d2021') no-repeat center center / contain;
+}
+.icon-netlify:focus {
+	background: url('https://api.iconify.design/cib:netlify.svg?color=%231d2021') no-repeat center center / contain;
+}*/
+
+/* torrent block */
+/*.icon-torrent {
+	color: #a89984;
+}
+.icon-torrent {
+	color: #1d2021;
+}*/
+/*.logo {
+	background: url(/assets/icons/torrentgrey.svg);
+}*/
+
 
 .search {
 	margin: 0px 0px 25px 0px;
@@ -235,3 +312,4 @@ input[id="searchbox"]:hover::placeholder {
 .btn_todo {
 	margin: 5px 0px;
 }
+
