@@ -43,7 +43,7 @@ function search(query) {
 				query.concat('&categories=110&purity=100&atleast=1920x1080&sorting=relevance&order=desc'), '_blank');
 			break;
 		default:
-			window.open('https://www.google.com/#q=' +
+			window.open('https://www.google.com/search?q=' +
 				query.replaceChars(' ', '%20'), '_blank');
 	}
 }
