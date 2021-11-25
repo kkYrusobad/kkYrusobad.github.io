@@ -95,7 +95,7 @@ input[type="checkbox"] {display: none;}
 	align-items: center;
 	background: var(--card-bg);
 	width: 470px; /* edit this to change the shape of the holding card, x axis */
-	height: 240px; /* this also works, y axis */
+	height: 310px; /* this also works, y axis */
 	border-radius: 8px;
 	box-shadow: 0px 2px 25px var(--card-shadow-color);
 	transition: background-color .7s, box-shadow .7s;
